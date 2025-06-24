@@ -39,7 +39,7 @@ async def fill_template(
         # output_stream.seek(0)
         
         doc.save("filled_contract.docx")
-        return FileResponse("filled_contract.docx")
+        return FileResponse("filled_contract.docx", filename="filled_contract.docx")
         # return StreamingResponse(
         #     output_stream,
         #     media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -52,4 +52,4 @@ async def fill_template(
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host = "0.0.0.0", port=10000, reload=True)
+    uvicorn.run("main:app", host = "127.0.0.1", port=10000, reload=True)
