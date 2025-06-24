@@ -5,7 +5,6 @@ from fastapi.responses import FileResponse
 from docxtpl import DocxTemplate
 import json
 import io
-import os
 import uvicorn
 
 app = FastAPI()
@@ -14,7 +13,7 @@ app.add_middleware(
     allow_origins=["*"]
 )
 
-PORT = os.getenv('PORT', 10000)
+
 
 @app.post("/fill_template")
 async def fill_template(
@@ -53,4 +52,4 @@ async def fill_template(
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host = "0.0.0.0", port=PORT, reload=True)
+    uvicorn.run("main:app", host = "0.0.0.0", port=10000, reload=True)
